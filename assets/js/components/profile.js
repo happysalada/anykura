@@ -4,41 +4,82 @@ import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Avatar from 'material-ui/Avatar';
 import Typography from 'material-ui/Typography';
+import List, { ListItem } from 'material-ui/List';
 import Snackbar from 'material-ui/Snackbar';
 import Button from 'material-ui/Button';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 import Notifi from './notification';
+
+
+
 
 class Profile extends Component {
 
     state = {
-        open: true
+        open: true,
+        currentItems: []
+
     }
 
     vertical = 'bottom';
     horizontal = 'right';
 
+    componentDidMount() {
+        fetch('https://junction-tokyo.minikura.com/v1/minikura/item?oem_key=a58f6f263c8b5e6b').then(
+            (response) => response.json()).then((data) => {
+                if (data.status == 1) {
+                    this.setState({currentItems: data.results});
+                }
+                console.log(data);
+            }).catch((error) => {console.log(error)});
+    }
+
 
     render() {
+        let items = null;
+        if (this.state.currentItems) {
+            items = this.state.currentItems.map((item) => {
+                let storage = null;
+                switch (item.storage_status) {
+                    case 'non_storage':
+                        storage = (<span>Not Stored</span>)
+                }
+                return (
+                    <ListItem key={item.item_id}>{storage}</ListItem>
+                )
+            });
+        }
         return (
             <React.Fragment>
                 <AppBar color='primary' position='static'>
                     <Toolbar>
-                        <span style={{flex: 1}}>
-                          <Button color='secondary' onClick={() => {console.log(this.state)}}>Logout</Button>
-                        </span>
-                        <Typography style={{textAlign: 'center'}} variant='title' color='secondary'>Profile</Typography>
-                        <span style={{flex: 1}}></span>
-                  </Toolbar>
+                        <span style={{flex: 1}}><Button color='secondary' onClick={() => {console.log(this.state)}}>Logout</Button></span><Typography style={{textAlign: 'center'}} variant='title' color='secondary'>Profile</Typography><span style={{flex: 1}}></span>
+                    </Toolbar>
                 </AppBar>
                 <div style={{textAlign: 'center'}}><img alt='profile-pic' src='https://placehold.it/125x125' style={{borderRadius: '10px', marginTop: '15px', border: '2px solid #d50000'}} /></div>
-                <Snackbar color='primary' anchorOrigin={{ vertical: this.vertical, horizontal: this.horizontal }}
+                <Snackbar
+                color='primary'
+                anchorOrigin={{ vertical: this.vertical, horizontal: this.horizontal }}
                 open={this.state.open}
                 autoHideDuration={3000}
                 onClose={() => {this.setState((prevState) => {return {open: !prevState.open}});}}
                 children={<Notifi close={() => {this.setState({open: false});}}/>} />
+                <List>
+                    {items}
+                </List>
+
             </React.Fragment>
         );
     }
 }
 
-export default withRouter(Profile);
+const mapStateToProps = () => {
+    return {}
+}
+
+const mapDispatchToProps = () => {
+    return {}
+}
+
+export default compose(withRouter, connect(mapStateToProps, mapDispatchToProps))(Profile);
