@@ -43,9 +43,12 @@ class Profile extends Component {
                 switch (item.storage_status) {
                     case 'non_storage':
                         storage = (<span>Not Stored</span>)
+                        break;
+                    default:
+                        storage = (<span>Unknown</span>)
                 }
                 return (
-                    <ListItem key={item.item_id}>{storage}</ListItem>
+                    <ListItem button key={item.item_id}>{storage}</ListItem>
                 )
             });
         }
@@ -56,15 +59,21 @@ class Profile extends Component {
                         <span style={{flex: 1}}><Button color='secondary' onClick={() => {console.log(this.state)}}>Logout</Button></span><Typography style={{textAlign: 'center'}} variant='title' color='secondary'>Profile</Typography><span style={{flex: 1}}></span>
                     </Toolbar>
                 </AppBar>
-                <div style={{textAlign: 'center'}}><img alt='profile-pic' src='https://placehold.it/125x125' style={{borderRadius: '10px', marginTop: '15px', border: '2px solid #d50000'}} /></div>
+                <div style={{textAlign: 'center'}}>
+                    <img alt='profile-pic' src='https://placehold.it/125x125' style={{borderRadius: '10px', marginTop: '15px', border: '2px solid #d50000'}} />
+                    <Typography color='primary'>{this.state.user}</Typography>
+                </div>
                 <Snackbar
                 color='primary'
                 anchorOrigin={{ vertical: this.vertical, horizontal: this.horizontal }}
                 open={this.state.open}
                 autoHideDuration={3000}
                 onClose={() => {this.setState((prevState) => {return {open: !prevState.open}});}}
-                children={<Notifi close={() => {this.setState({open: false});}}/>} />
+                children={<Notifi title={this.props.notifyTitle} message={this.props.notifyMessage} close={() => {this.setState({open: false});}}/>} />
                 <List>
+                <ListItem button>
+                        <div style={{width: '75px', border: '2px solid #d50000'}}></div>
+                </ListItem>
                     {items}
                 </List>
 
@@ -74,7 +83,18 @@ class Profile extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return {}
+    if (state.notifications[0]) {
+        return {
+            notifyTitle: state.notifications[0].title,
+            notifyMessage: state.notifications[0].message,
+        }
+    } else {
+        return {
+            notifyTitle: '',
+            notifyMessage: '',
+        }
+    }
+    
 }
 
 const mapDispatchToProps = (dispatch) => {
