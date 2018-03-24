@@ -3,7 +3,7 @@ defmodule AnykuraWeb.DeviceDataController do
   require Logger
 
   def index(conn, params) do
-    Logger.info(params)
+    IO.inspect(params, label: ">>>DEVICE DATA<<<")
     conn
     |> put_status(200)
     |> json(%{

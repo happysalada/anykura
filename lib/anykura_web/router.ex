@@ -17,6 +17,10 @@ defmodule AnykuraWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+  end
+
+  scope "/api", AnykuraWeb do
+    pipe_through :api
 
     post "/device_data", DeviceDataController, :index
   end
