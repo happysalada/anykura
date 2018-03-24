@@ -8,9 +8,6 @@ import Snackbar from 'material-ui/Snackbar';
 import Button from 'material-ui/Button';
 import Notifi from './notification';
 
-
-
-
 class Profile extends Component {
 
     state = {
@@ -32,7 +29,8 @@ class Profile extends Component {
                 <Snackbar color='primary' anchorOrigin={{ vertical: this.vertical, horizontal: this.horizontal }}
                 open={this.state.open}
                 autoHideDuration={3000}
-                onClose={() => {this.setState((prevState) => {return {open: !prevState.open}});}} children={<Notifi close={() => {this.setState({open: false});}}/>} />
+                onClose={() => {this.setState((prevState) => {return {open: !prevState.open}});}}
+                children={<Notifi close={() => {this.setState({open: false});}}/>} />
             </React.Fragment>
         );
     }
