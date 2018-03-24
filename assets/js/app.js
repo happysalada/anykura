@@ -21,10 +21,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import MainApp from './MainApp';
 import { BrowserRouter } from 'react-router-dom';
-import './index.css';
 import { createMuiTheme , MuiThemeProvider } from 'material-ui/styles';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import store from './store';
 
 const theme = createMuiTheme({
   palette: {
@@ -38,8 +37,6 @@ const theme = createMuiTheme({
     },
   },
 });
-
-const store = createStore(rootReducer);
 
 ReactDOM.render(
     <MuiThemeProvider theme={theme}>

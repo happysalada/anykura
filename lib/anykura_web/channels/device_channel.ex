@@ -24,6 +24,10 @@ defmodule AnykuraWeb.DeviceChannel do
     {:noreply, socket}
   end
 
+  def broadcast(event) do
+    Endpoint.broadcast("device:lobby", event, %{})
+  end
+
   def broadcast(event, payload) do
     Endpoint.broadcast("device:lobby", event, payload)
   end
