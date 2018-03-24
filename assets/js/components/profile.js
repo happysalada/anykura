@@ -11,9 +11,6 @@ import Icon from 'material-ui/Icon';
 import Paper from 'material-ui/Paper';
 import Notifi from './notification';
 
-
-
-
 class Profile extends Component {
 
     state = {
@@ -29,10 +26,18 @@ class Profile extends Component {
             <React.Fragment>
                 <AppBar position='static'><Toolbar><Typography>Profile</Typography><Button onClick={() => {console.log(this.state)}}>get state</Button></Toolbar></AppBar>
                 <div style={{textAlign: 'center'}}><Avatar alt='profile-pic' style={{width: '20%'}} src='https://placehold.it/200x200' /></div>
-                <Snackbar color='primary' anchorOrigin={{ vertical: this.vertical, horizontal: this.horizontal }}
-                open={this.state.open}
-                autoHideDuration={3000}
-                onClose={() => {this.setState((prevState) => {return {open: !prevState.open}});}} children={<Notifi close={() => {this.setState({open: false});}}/>} />
+                <Snackbar
+                  color='primary'
+                  anchorOrigin={{ vertical: this.vertical, horizontal: this.horizontal }}
+                  open={this.state.open}
+                  autoHideDuration={3000}
+                  onClose={() => {this.setState((prevState) => {return {open: !prevState.open}});}}
+                  children={
+                  <Notifi
+                    title={<span>Hello</span>}
+                    message={<p>yoyoyo</p>}
+                    close={() => {this.setState({open: false});}}/>}
+                  />
             </React.Fragment>
         );
     }
