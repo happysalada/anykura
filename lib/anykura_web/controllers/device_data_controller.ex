@@ -5,6 +5,7 @@ defmodule AnykuraWeb.DeviceDataController do
   def index(conn, params) do
     IO.inspect(params, label: ">>>DEVICE DATA<<<")
     conn
+    |> IO.inspect()
     |> put_status(200)
     |> json(%{
       message: "all good"
