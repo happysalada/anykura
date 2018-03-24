@@ -13,15 +13,15 @@ defmodule AnykuraWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", AnykuraWeb do
-    pipe_through :browser # Use the default browser stack
-
-    get "/", PageController, :index
-  end
-
   scope "/api", AnykuraWeb do
 
     post "/device_data", DeviceDataController, :index
+  end
+
+  scope "/", AnykuraWeb do
+    pipe_through :browser # Use the default browser stack
+
+    forward "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.

@@ -9,7 +9,6 @@ import Button from 'material-ui/Button';
 import AppBar from 'material-ui/AppBar';
 
 class Landing extends Component {
-
   textStyles = {
     padding: '8px'
   }
