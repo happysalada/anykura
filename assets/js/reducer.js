@@ -18,6 +18,7 @@ export default function(state = initialState, action) {
         ],
       };
     case 'PICK_UP':
+      console.log(state.notifications);
       return {
         ...state,
         notificationOpen: !state.notificationOpen,
@@ -42,10 +43,10 @@ export default function(state = initialState, action) {
         ],
       };
     case 'REMOVE':
-      console.log('removed');
       return {
         ...state,
-        notifications: state.notifications.splice(0, 1),
+        notificationOpen: !state.notificationOpen,
+        notifications: state.notifications.slice(1),
       };
     case 'LIVE_UPDATE_OFF':
       return initialState;
