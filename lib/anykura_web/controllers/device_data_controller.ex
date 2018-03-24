@@ -8,6 +8,9 @@ defmodule AnykuraWeb.DeviceDataController do
     DeviceChannel.broadcast(event)
     conn
     |> put_status(200)
+    |> json(%{
+      message: "all good"
+    })
   end
 
   def index(conn, params) do
