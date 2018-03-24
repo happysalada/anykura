@@ -2,7 +2,7 @@ defmodule AnykuraWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", AnykuraWeb.RoomChannel
+  channel "device:*", AnykuraWeb.DeviceChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket,

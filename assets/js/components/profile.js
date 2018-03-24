@@ -10,7 +10,7 @@ import Button from 'material-ui/Button';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import Notifi from './notification';
-import connectToChannel from '../actions';
+import { connectToChannel } from '../actions';
 class Profile extends Component {
 
     state = {
@@ -23,7 +23,9 @@ class Profile extends Component {
     horizontal = 'right';
 
     componentDidMount() {
+      const {dispatch} = this.props;
       this.props.connectToChannel();
+      // this.props.connectToChannel();
       fetch('https://junction-tokyo.minikura.com/v1/minikura/item?oem_key=a58f6f263c8b5e6b')
         .then(response => response.json())
         .then(({status, results}) => {
@@ -71,12 +73,14 @@ class Profile extends Component {
     }
 }
 
-const mapStateToProps = () => {
+const mapStateToProps = (state) => {
     return {}
 }
 
-const mapDispatchToProps = () => {
-    return {}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    connectToChannel: () => dispatch(connectToChannel())
+  }
 }
 
 export default compose(withRouter, connect(mapStateToProps, mapDispatchToProps))(Profile);
