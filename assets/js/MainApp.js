@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Profile from './components/profile';
 import LandingSlide from './components/landingSlide';
+import '../node_modules/slick-carousel/slick/slick.css'; 
+import '../node_modules/slick-carousel/slick/slick-theme.css';
+import StorageMap from './components/storagemap';
+import ItemStatus from './components/itemstatus';
 import AddItem from './components/additem';
 
 class MainApp extends Component {
@@ -10,7 +14,9 @@ class MainApp extends Component {
       <React.Fragment>
         <Route path='/' exact component={LandingSlide} />
         <Route path='/profile' exact component={Profile} />
-        <Route path='/additem' exact component={AddItem} />
+        <Route path='/find-storage' exact component={StorageMap} />
+        <Route path='/view-item' exact component={ItemStatus} />
+        <Route path='/add-item' exact component={AddItem} />
       </React.Fragment>
     );
   }

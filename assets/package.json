@@ -18,7 +18,8 @@
     "react-router-dom": "^4.2.2",
     "react-slick": "^0.22.2",
     "redux": "^3.7.2",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "react-google-maps": "^9.4.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

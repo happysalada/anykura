@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
-import { BrowserView, MobileView, isMobile, isBrowser } from 'react-device-detect';
 import { withRouter } from 'react-router-dom';
-import TextField from 'material-ui/TextField';
-import Paper from 'material-ui/Paper';
-import Toolbar from 'material-ui/Toolbar';
 import Button from 'material-ui/Button';
-import AppBar from 'material-ui/AppBar';
+import Typography from 'material-ui/Typography';
 
 class Landing extends Component {
 
     textStyles = {
         padding: '8px'
+    }
+
+    textBoxStyles = {
+        border: '2px solid #d8d8d8',
+        borderRadius: '4px',
+        height: '45px',
+        padding: '8px',
+        boxSizing: 'border-box'
     }
 
     state = {
@@ -19,36 +23,35 @@ class Landing extends Component {
     }
     
     submitForm() {
-        if (this.state.username === 'user' && this.state.password === 'password') {
             this.props.history.push('profile');
             console.log('nav to profile');
-        }
     }
     
     render() {
         return (
             <React.Fragment>
-                <MobileView device={isMobile}>
-                <AppBar position='static'><Toolbar>Anykura <Button onClick={() => {console.log(this.props)}}>get props</Button> <Button onClick={() => {console.log(this.state)}}>get state</Button></Toolbar></AppBar>
-                <Paper style={{width: '96%', margin: '10px auto', padding: '5px', boxSizing: 'border-box'}}>
-                <form onSubmit={(event) => {event.preventDefault(); this.submitForm()}}>
+                <div style={{textAlign: 'center', padding: '20px'}}><img alt='placeholder' style={{width: '50%', margin: 'auto'}} src={require('../staticassets/logo.png')} /></div>
+                <form style={{marginTop: '30px'}} onSubmit={(event) => {event.preventDefault(); this.submitForm()}}>
                 <div style={this.textStyles}>
-                <TextField fullWidth onChange={(event) => {this.setState({username: event.target.value})}}  label='Username' />
+                <input
+                    style={{...this.textBoxStyles, width: '100%'}}
+                    placeholder='Username'
+                    onChange={(event) => {this.setState({username: event.target.value})}} />
                 </div>
                 <div style={this.textStyles}>
-                <TextField fullWidth onChange={(event) => {this.setState({password: event.target.value})}} label='Password' />
+                <input
+                    style={{...this.textBoxStyles, width: '100%'}}
+                    onChange={(event) => {this.setState({password: event.target.value})}}
+                    placeholder='Password' />
                 </div>
-                <Button style={{margin: '10px 5px'}} color='primary' type='submit' variant='raised'>Login</Button>
-                <Button style={{margin: '10px 5px'}} color='secondary' type='submit' variant='raised'>Signup</Button>
-                <hr/>
-                <Button fullWidth style={{backgroundColor: '#3b5998'}} color='primary' variant='raised'>Login with Facebook</Button>
+                <Button fullWidth style={{margin: '15px 0'}} color='primary' type='submit' variant='raised'>Login</Button>
+                <Typography style={{textAlign: 'center', margin: '15px'}}>or</Typography>
+                <Button fullWidth style={{backgroundColor: '#3b5998', margin: '8px 0'}} color='primary' variant='raised'>Login with Facebook</Button>
                 </form>
-                </Paper>
-                </MobileView>
-                <BrowserView device={isBrowser}>
-                </BrowserView>
-                
-            </React.Fragment>
+                <div style={{position: 'fixed', bottom: '0'}}>
+                <img alt='placeholder' style={{width: '100%'}} src={require('../staticassets/background.png')} />
+                </div>
+        </React.Fragment>
         )
     }
 }

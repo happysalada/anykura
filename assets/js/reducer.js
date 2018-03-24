@@ -1,6 +1,10 @@
 const initialState = {
   notificationOpen: false,
   notifications: [],
+  currentItems: null,
+  username: '',
+  viewingItem: null,
+  storedOpen: false
 };
 
 export default function(state = initialState, action) {
@@ -50,6 +54,27 @@ export default function(state = initialState, action) {
       };
     case 'LIVE_UPDATE_OFF':
       return initialState;
+    case 'UPDATE_ITEMS':
+      return {
+        ...state,
+        currentItems: action.items,
+        username: action.items[0].oem_name
+      }
+    case 'UPDATE_VIEWING':
+      return {
+        ...state,
+        viewingItem: action.item
+      }
+    case 'NO_ITEM':
+      return {
+        ...state,
+        viewingItem: null
+      }
+    case 'CLOSE_SNACK':
+      return {
+        ...state,
+        storedOpen: !state.storedOpen
+      }
     default:
       return state;
   }
