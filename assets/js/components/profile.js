@@ -67,7 +67,6 @@ class Profile extends Component {
                 color='primary'
                 anchorOrigin={{ vertical: this.vertical, horizontal: this.horizontal }}
                 open={this.state.open}
-                autoHideDuration={3000}
                 onClose={() => {this.setState((prevState) => {return {open: !prevState.open}});}}
                 children={<Notifi title={this.props.notifyTitle} message={this.props.notifyMessage} close={() => {this.setState({open: false});}}/>} />
                 <List>
@@ -94,7 +93,7 @@ const mapStateToProps = (state) => {
             notifyMessage: '',
         }
     }
-    
+
 }
 
 const mapDispatchToProps = (dispatch) => {

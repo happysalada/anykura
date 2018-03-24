@@ -1,4 +1,5 @@
 const initialState = {
+  notificationOpen: false,
   notifications: [],
 };
 
@@ -7,6 +8,7 @@ export default function(state = initialState, action) {
     case 'LIVE_UPDATE_ON':
       return {
         ...state,
+        notificationOpen: !state.notificationOpen,
         notifications: [
           ...state.notifications,
           {
@@ -18,6 +20,7 @@ export default function(state = initialState, action) {
     case 'PICK_UP':
       return {
         ...state,
+        notificationOpen: !state.notificationOpen,
         notifications: [
           ...state.notifications,
           {
@@ -29,6 +32,7 @@ export default function(state = initialState, action) {
     case 'DELIVERED':
       return {
         ...state,
+        notificationOpen: !state.notificationOpen,
         notifications: [
           ...state.notifications,
           {
