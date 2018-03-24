@@ -18,8 +18,34 @@ import "phoenix_html"
 
 // import socket from "./socket"
 import React from 'react';
-import MainApp from './MainApp';
 import ReactDOM from 'react-dom';
+import MainApp from './MainApp';
 import { BrowserRouter } from 'react-router-dom';
+import './index.css';
+import { createMuiTheme , MuiThemeProvider } from 'material-ui/styles';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
-ReactDOM.render(<BrowserRouter><MainApp /></BrowserRouter>, document.getElementById('root'));
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#d50000',
+      contrastText: '#fff',
+    },
+    secondary: {
+      main: '#fff',
+      contrastText: '#fff',
+    },
+  },
+});
+
+const store = createStore(rootReducer);
+
+ReactDOM.render(
+    <MuiThemeProvider theme={theme}>
+        <Provider provider={store}>
+            <BrowserRouter>
+                <MainApp />
+            </BrowserRouter>
+        </Provider>
+    </MuiThemeProvider>, document.getElementById('root'));

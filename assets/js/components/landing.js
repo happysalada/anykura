@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserView, MobileView, isMobile, isBrowser } from 'react-device-detect';
-import Icon from 'material-ui/Icon';
 import { withRouter } from 'react-router-dom';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';

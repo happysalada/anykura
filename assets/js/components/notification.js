@@ -1,9 +1,6 @@
 import React from 'react';
-import Typography from 'material-ui/Typography';
-import Snackbar from 'material-ui/Snackbar';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
+import List, { ListItem, ListItemText } from 'material-ui/List';
 import IconButton from 'material-ui/IconButton';
-import Button from 'material-ui/Button'
 import Icon from 'material-ui/Icon';
 import Paper from 'material-ui/Paper';
 
