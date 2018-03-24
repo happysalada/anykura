@@ -17,3 +17,11 @@ import "phoenix_html"
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+import React from 'react';
+import ReactDOM from 'react-dom';
+import MainApp from './MainApp';
+import { BrowserRouter } from 'react-router-dom';
+import registerServiceWorker from './registerServiceWorker';
+
+ReactDOM.render(<BrowserRouter><MainApp /></BrowserRouter>, document.getElementById('root'));
+registerServiceWorker();
