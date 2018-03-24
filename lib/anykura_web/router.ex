@@ -19,6 +19,12 @@ defmodule AnykuraWeb.Router do
     get "/", PageController, :index
   end
 
+  scope "/api", AnykuraWeb do
+    pipe_through :api
+
+    post "/device_data", DeviceDataController, :index
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", AnykuraWeb do
   #   pipe_through :api
