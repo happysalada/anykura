@@ -66,16 +66,16 @@ class Profile extends Component {
                 <Snackbar
                 color='primary'
                 anchorOrigin={{ vertical: this.vertical, horizontal: this.horizontal }}
-                open={this.state.open}
-                onClose={() => {this.setState((prevState) => {return {open: !prevState.open}});}}
+                open={this.props.notificationOpen}
+                autoHideDuration={5000}
+                onClose={() => {this.props.removeNotify()}}
                 children={<Notifi title={this.props.notifyTitle} message={this.props.notifyMessage} close={() => {this.setState({open: false});}}/>} />
                 <List>
-                <ListItem button>
+                    <ListItem button>
                         <div style={{width: '75px', border: '2px solid #d50000'}}></div>
-                </ListItem>
+                    </ListItem>
                     {items}
                 </List>
-
             </React.Fragment>
         );
     }
@@ -86,11 +86,13 @@ const mapStateToProps = (state) => {
         return {
             notifyTitle: state.notifications[0].title,
             notifyMessage: state.notifications[0].message,
+            notificationOpen: state.notificationOpen
         }
     } else {
         return {
             notifyTitle: '',
             notifyMessage: '',
+            notificationOpen: state.notificationOpen
         }
     }
 
@@ -98,7 +100,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    connectToChannel: () => dispatch(connectToChannel())
+    connectToChannel: () => dispatch(connectToChannel()),
+    removeNotify: () => dispatch({type: 'REMOVE'})
   }
 }
 
