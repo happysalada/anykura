@@ -20,7 +20,6 @@ defmodule AnykuraWeb.Router do
   end
 
   scope "/api", AnykuraWeb do
-    pipe_through :api
 
     post "/device_data", DeviceDataController, :index
   end
