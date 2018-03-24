@@ -10,10 +10,7 @@ import Button from 'material-ui/Button';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import Notifi from './notification';
-
-
-
-
+import connectToChannel from '../actions';
 class Profile extends Component {
 
     state = {
@@ -26,13 +23,13 @@ class Profile extends Component {
     horizontal = 'right';
 
     componentDidMount() {
-        fetch('https://junction-tokyo.minikura.com/v1/minikura/item?oem_key=a58f6f263c8b5e6b').then(
-            (response) => response.json()).then((data) => {
-                if (data.status == 1) {
-                    this.setState({currentItems: data.results});
-                }
-                console.log(data);
-            }).catch((error) => {console.log(error)});
+      this.props.connectToChannel();
+      fetch('https://junction-tokyo.minikura.com/v1/minikura/item?oem_key=a58f6f263c8b5e6b')
+        .then(response => response.json())
+        .then(({status, results}) => {
+          if(status == 1) this.setState({currentItems: results});
+          console.log({status, results});
+        }).catch(error => console.log(error));
     }
 
 
