@@ -28,7 +28,7 @@ class Profile extends Component {
         return (
             <React.Fragment>
                 <AppBar position='static'><Toolbar><Typography>Profile</Typography><Button onClick={() => {console.log(this.state)}}>get state</Button></Toolbar></AppBar>
-                <div style={{textAlign: 'cetner'}}><Avatar alt='profile-pic' style={{width: '20%'}} src='https://placehold.it/200x200' /></div>
+                <div style={{textAlign: 'center'}}><Avatar alt='profile-pic' style={{width: '20%'}} src='https://placehold.it/200x200' /></div>
                 <Snackbar color='primary' anchorOrigin={{ vertical: this.vertical, horizontal: this.horizontal }}
                 open={this.state.open}
                 autoHideDuration={3000}
