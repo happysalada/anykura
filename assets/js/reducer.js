@@ -38,6 +38,7 @@ export default function(state = initialState, action) {
         ],
       };
     case 'REMOVE':
+      console.log('removed');
       return {
         ...state,
         notifications: state.notifications.splice(0, 1),
