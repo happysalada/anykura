@@ -18,10 +18,8 @@ import "phoenix_html"
 
 // import socket from "./socket"
 import React from 'react';
-import ReactDOM from 'react-dom';
 import MainApp from './MainApp';
+import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<BrowserRouter><MainApp /></BrowserRouter>, document.getElementById('root'));
-registerServiceWorker();
