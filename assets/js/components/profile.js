@@ -171,7 +171,7 @@ class Profile extends Component {
                     });
                 }}
               >
-                DEL
+                <Icon>delete</Icon>
               </Button>
             </ListItemSecondaryAction>
           </ListItem>
