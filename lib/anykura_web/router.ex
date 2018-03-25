@@ -16,6 +16,7 @@ defmodule AnykuraWeb.Router do
   scope "/api", AnykuraWeb do
 
     post "/device_data", DeviceDataController, :index
+    get "/minikura", MinikuraController, :index
   end
 
   scope "/", AnykuraWeb do
