@@ -22,7 +22,7 @@ class StorageMap extends Component {
 
   mapMarkers = [
     {
-      icon: 'https://placehold.it/50x50',
+      icon: '/images/300.png',
       position: {lat: 35.612818, lng: 139.737664},
       price: '300',
       click: () => {
@@ -38,7 +38,7 @@ class StorageMap extends Component {
       }
     },
     {
-      icon: 'https://placehold.it/50x50',
+      icon: '/images/200.png',
       position: {lat: 35.609194, lng: 139.72702},
       price: '200',
       click: () => {
@@ -54,7 +54,7 @@ class StorageMap extends Component {
       }
     },
     {
-      icon: 'https://placehold.it/50x50',
+      icon: '/images/275.png',
       position: {lat: 35.614545, lng: 139.732086},
       price: '275',
       click: () => {
