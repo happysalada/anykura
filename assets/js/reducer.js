@@ -46,6 +46,18 @@ export default function(state = initialState, action) {
           }
         ],
       };
+    case 'SHOCK':
+      return {
+        ...state,
+        notificationOpen: !state.notificationOpen,
+        notifications: [
+          ...state.notifications,
+          {
+            title: 'Your item has been moved!!',
+            message: 'We have contacted the storer to ask for an explanation'
+          }
+        ],
+      };
     case 'REMOVE':
       return {
         ...state,
