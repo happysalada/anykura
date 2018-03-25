@@ -12,10 +12,12 @@ export function connectToChannel() {
     });
 
     channel.on('button_two_pressed', () => {
+      console.log('button two pressed');
       dispatch({type: 'DELIVERED'});
     });
 
     channel.on('button_three_pressed', () => {
+      console.log('shock');
       dispatch({type: 'SHOCK'});
     });
 
