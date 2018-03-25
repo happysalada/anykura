@@ -15,6 +15,10 @@ export function connectToChannel() {
       dispatch({type: 'DELIVERED'});
     });
 
+    channel.on('shock', () => {
+      dispatch({type: 'SHOCK'});
+    });
+
     channel.join().receive('ok', () => {
       dispatch({type: 'LIVE_UPDATE_ON', channel});
     });
