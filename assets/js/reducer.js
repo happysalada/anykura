@@ -16,13 +16,12 @@ export default function(state = initialState, action) {
         notifications: [
           ...state.notifications,
           {
-            title: 'Your request is in progress',
+            title: 'You are connecte to live updates',
             message: 'Thank you for your business'
           }
         ],
       };
     case 'PICK_UP':
-      console.log(state.notifications);
       return {
         ...state,
         notificationOpen: !state.notificationOpen,
