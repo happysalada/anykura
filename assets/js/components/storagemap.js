@@ -22,14 +22,14 @@ class StorageMap extends Component {
 
   mapMarkers = [
     {
-      icon: '/images/300.png',
+      icon: '/images/price2.png',
       position: {lat: 35.612818, lng: 139.737664},
       price: '300',
       click: () => {
         this.setState({
           ownerSelected: true,
           currentOwner: {
-            pic: 'http://placehold.it/500x613',
+            pic: 'http://placehold.it/125x125',
             price: '300',
             name: 'placeholdname1',
             perfectFor: 'Perfect for Wine'
@@ -38,14 +38,14 @@ class StorageMap extends Component {
       }
     },
     {
-      icon: '/images/200.png',
+      icon: '/images/price3.png',
       position: {lat: 35.609194, lng: 139.72702},
       price: '200',
       click: () => {
         this.setState({
           ownerSelected: true,
           currentOwner: {
-            pic: 'http://placehold.it/500x613',
+            pic: 'http://placehold.it/125x125',
             price: '200',
             name: 'placeholdname2',
             perfectFor: 'place hold perfect fro'
@@ -54,7 +54,7 @@ class StorageMap extends Component {
       }
     },
     {
-      icon: '/images/275.png',
+      icon: '/images/price1.png',
       position: {lat: 35.614545, lng: 139.732086},
       price: '275',
       click: () => {
