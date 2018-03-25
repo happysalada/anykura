@@ -102,38 +102,6 @@ class ItemStatus extends Component {
             style={{width: '50%', margin: '0', padding: '0'}}
             src={'/images/direction.png'}
           />
-          <Button
-            fullWidth
-            style={{
-              height: '55px',
-              backgroundColor: '#59ff8a',
-              position: 'absolute',
-              bottom: '55px',
-              left: '0',
-              borderRadius: '0'
-            }}
-            onClick={() => {
-              this.updateItem();
-            }}
-          >
-            Contact the Host
-          </Button>
-          <Button
-            fullWidth
-            style={{
-              height: '55px',
-              backgroundColor: '#ffcc66',
-              position: 'absolute',
-              bottom: '0',
-              left: '0',
-              borderRadius: '0'
-            }}
-            onClick={() => {
-              this.updateItem();
-            }}
-          >
-            Call it Back
-          </Button>
         </div>
       </React.Fragment>
     );
