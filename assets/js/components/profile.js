@@ -138,7 +138,8 @@ class Profile extends Component {
                 {status}
               </Button>
               <Button
-                onClick={() => {
+                onClick={(event) => {
+                  event.preventDefault();
                   fetch('/api/minikura/delete', {
                     body: JSON.stringify({
                       item_id: item.item_id
@@ -152,7 +153,6 @@ class Profile extends Component {
                     .then(results => {
                       if (results.status === '1') {
                         this.props.stored();
-                        this.props.history.goBack();
                       }
                     })
                     .catch(error => {
