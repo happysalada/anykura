@@ -28,6 +28,10 @@ class Profile extends Component {
     this.props.getItems();
   }
 
+  componentDidUpdate() {
+    this.props.getItems();
+  }
+
   render() {
     let items = null;
     if (this.props.currentItems) {
