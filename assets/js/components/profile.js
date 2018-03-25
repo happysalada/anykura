@@ -74,7 +74,7 @@ class Profile extends Component {
                                                                         this.props.history.goBack();
                 
                                                                     }}).catch((error) => {console.log(error)})
-                        }}>trash</Button>
+                        }}>DEL</Button>
                 </ListItemSecondaryAction>
             </ListItem>
           );
