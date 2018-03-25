@@ -54,11 +54,11 @@ class Landing extends Component {
           </div>
           <div style={this.textStyles}>
             <input
+              type="password"
               style={{...this.textBoxStyles, width: '100%'}}
               onChange={event => {
                 this.setState({password: event.target.value});
               }}
-              placeholder="Password"
             />
           </div>
           <Button
