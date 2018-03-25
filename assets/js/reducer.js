@@ -33,6 +33,18 @@ export default function(state = initialState, action) {
           }
         ],
       };
+    case 'REQUEST_ACCEPT':
+      return {
+        ...state,
+        notificationOpen: !state.notificationOpen,
+        notifications: [
+          ...state.notifications,
+          {
+            title: 'Your request is accepted',
+            message: 'Our delivery person will be there in 1 second!'
+          }
+        ],
+      };
     case 'DELIVERED':
       return {
         ...state,
