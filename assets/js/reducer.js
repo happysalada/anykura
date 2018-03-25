@@ -69,23 +69,23 @@ export default function(state = initialState, action) {
       return {
         ...state,
         currentItems: action.items,
-        username: action.items[0].oem_name
-      }
+        username: action.items[0] && action.items[0].oem_name || 'SakuraLove'
+      };
     case 'UPDATE_VIEWING':
       return {
         ...state,
         viewingItem: action.item
-      }
+      };
     case 'NO_ITEM':
       return {
         ...state,
         viewingItem: null
-      }
+      };
     case 'CLOSE_SNACK':
       return {
         ...state,
         storedOpen: !state.storedOpen
-      }
+      };
     default:
       return state;
   }
