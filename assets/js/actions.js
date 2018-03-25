@@ -15,7 +15,7 @@ export function connectToChannel() {
       dispatch({type: 'DELIVERED'});
     });
 
-    channel.on('shock', () => {
+    channel.on('button_three_pressed', () => {
       dispatch({type: 'SHOCK'});
     });
 

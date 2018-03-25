@@ -85,22 +85,22 @@ class ItemStatus extends Component {
           <img
             alt="placeholder"
             style={{width: '50%', marginTop: '20px', padding: '0'}}
-            src={'/image/time.png'}
+            src={'/images/time.png'}
           />
           <img
             alt="placeholder"
             style={{width: '50%', marginTop: '20px', padding: '0'}}
-            src={'/image/humid.png'}
+            src={'/images/humid.png'}
           />
           <img
             alt="placeholder"
             style={{width: '50%', margin: '0', padding: '0'}}
-            src={'/image/temp.png'}
+            src={'/images/temp.png'}
           />
           <img
             alt="placeholder"
             style={{width: '50%', margin: '0', padding: '0'}}
-            src={'/image/direction.png'}
+            src={'/images/direction.png'}
           />
           <Button
             fullWidth
