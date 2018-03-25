@@ -37,7 +37,7 @@ class ItemStatus extends Component {
           <img
             alt="placeholder"
             style={{height: '50%', width: '100%'}}
-            src="http://placehold.it/1200x800"
+            src="/images/wine!.png"
           />
         </div>
         <div>
@@ -59,7 +59,7 @@ class ItemStatus extends Component {
               textAlign: 'center'
             }}
           >
-            {this.props.currentItem.common06}
+            {this.props.currentItem.common06 || 'the shogun'}
           </Typography>
           <span
             style={{
