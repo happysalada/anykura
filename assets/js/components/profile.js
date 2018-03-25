@@ -18,8 +18,11 @@ import {updateItems} from '../actions';
 import Icon from 'material-ui/Icon';
 
 class Profile extends Component {
+  state = {
+    deleted: true
+  }
+  
   vertical = 'bottom';
-
   horizontal = 'right';
 
   componentDidMount() {
@@ -29,7 +32,10 @@ class Profile extends Component {
   }
 
   componentDidUpdate() {
-    this.props.getItems();
+    if (this.state.deleted) {
+      this.props.getItems();
+      this.setState({deleted: false})
+    }
   }
 
   render() {
@@ -157,6 +163,7 @@ class Profile extends Component {
                     .then(results => {
                       if (results.status === '1') {
                         this.props.stored();
+                        this.setState({deleted: true});
                       }
                     })
                     .catch(error => {
