@@ -140,7 +140,12 @@ class Profile extends Component {
               <Button
                 onClick={() => {
                   fetch('/api/minikura/delete', {
-                    body: {item_id: item.item_id},
+                    body: JSON.stringify({
+                      item_id: item.item_id
+                    }),
+                    headers: {
+                      'content-type': 'application/json'
+                    },
                     method: 'POST'
                   })
                     .then(response => response.json())
