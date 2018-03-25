@@ -66,6 +66,15 @@ class Profile extends Component {
                 <ListItemText primary={item.common01} secondary={storage} />
                 <ListItemSecondaryAction>
                     <Button onClick={() => {this.props.history.push(route); this.props.updateViewing(item, storage);}} variant='raised' style={{marginRight: '3px'}} color='primary'>{status}</Button>
+                    <Button onClick={() => {
+                        fetch('/api/minikura/delete', {body: {item_id: item.item_id}, method: 'POST'})
+                        .then((response) => response.json()).then((results) => {
+                                                                    if (results.status === '1') {
+                                                                        this.props.stored();
+                                                                        this.props.history.goBack();
+                
+                                                                    }}).catch((error) => {console.log(error)})
+                        }}>trash</Button>
                 </ListItemSecondaryAction>
             </ListItem>
           );

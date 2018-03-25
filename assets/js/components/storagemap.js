@@ -25,7 +25,7 @@ class StorageMap extends Component {
 
     updateItem() {
         console.log(this.props.currentItem.item_id);
-        fetch('https://junction-tokyo.minikura.com/v1/minikura/item?oem_key=a58f6f263c8b5e6b&item_id=' + this.props.currentItem.item_id + '&storage_status=leaving', {method: 'POST'})
+        fetch('/api/minikura/update', {body: {item_id: this.props.currentItem.item_id, storage_status: 'leaving'}, method: 'POST'})
         .then((response) => response.json()).then((results) => {
                                                     if (results.status === '1') {
                                                         this.props.stored();
