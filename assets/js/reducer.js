@@ -73,7 +73,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         notificationOpen: !state.notificationOpen,
-        notifications: state.notifications.slice(1),
+        notifications: [],
       };
     case 'LIVE_UPDATE_OFF':
       return initialState;
