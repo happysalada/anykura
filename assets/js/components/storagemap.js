@@ -29,9 +29,9 @@ class StorageMap extends Component {
         this.setState({
           ownerSelected: true,
           currentOwner: {
-            pic: 'http://placehold.it/125x125',
+            pic: '/images/place1.png',
             price: '300',
-            name: 'placeholdname1',
+            name: 'Tennozu Wine Cellar',
             perfectFor: 'Perfect for Wine'
           }
         });
@@ -45,10 +45,10 @@ class StorageMap extends Component {
         this.setState({
           ownerSelected: true,
           currentOwner: {
-            pic: 'http://placehold.it/125x125',
+            pic: '/images/place2.png',
             price: '200',
-            name: 'placeholdname2',
-            perfectFor: 'place hold perfect fro'
+            name: 'Shinagawa Japanese Kimono Center',
+            perfectFor: 'perfect for Kimono'
           }
         });
       }
@@ -61,10 +61,10 @@ class StorageMap extends Component {
         this.setState({
           ownerSelected: true,
           currentOwner: {
-            pic: 'http://placehold.it/125x125',
+            pic: '/images/place3.png',
             price: '270',
-            name: 'placeholdname3',
-            perfectFor: 'place hold again'
+            name: 'Tokyo secret storage',
+            perfectFor: 'perfect for political party documents'
           }
         });
       }
