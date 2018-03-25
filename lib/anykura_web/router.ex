@@ -17,7 +17,8 @@ defmodule AnykuraWeb.Router do
 
     post "/device_data", DeviceDataController, :index
     get "/minikura", MinikuraController, :index
-    post "/minikura", MinikuraController, :update
+    post "/minikura/update", MinikuraController, :update
+    post "/minikura/delete", MinikuraController, :delete
   end
 
   scope "/", AnykuraWeb do
