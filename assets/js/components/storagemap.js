@@ -61,7 +61,7 @@ class StorageMap extends Component {
         this.setState({
           ownerSelected: true,
           currentOwner: {
-            pic: 'http://placehold.it/500x613',
+            pic: 'http://placehold.it/125x125',
             price: '270',
             name: 'placeholdname3',
             perfectFor: 'place hold again'
