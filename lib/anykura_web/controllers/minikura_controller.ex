@@ -16,6 +16,19 @@ defmodule AnykuraWeb.MinikuraController do
       conn
       |> put_status(200)
       |> json(Jason.decode!(body))
+    else
+      {:ok, %HTTPoison.Response{status_code: status_code}} ->
+        conn
+        |> put_status(status_code)
+        |> json(%{
+          message: "there was a problem with your request"
+        })
+      {:error, message} ->
+        conn
+        |> put_status(400)
+        |> json(%{
+          message: message
+        })
     end
   end
 end
