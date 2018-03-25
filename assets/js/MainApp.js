@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Profile from './components/profile';
 import LandingSlide from './components/landingSlide';
-import '../node_modules/slick-carousel/slick/slick.css'; 
-import '../node_modules/slick-carousel/slick/slick-theme.css';
 import StorageMap from './components/storagemap';
 import ItemStatus from './components/itemstatus';
 import AddItem from './components/additem';

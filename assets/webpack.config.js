@@ -22,9 +22,19 @@ module.exports = (env, options) => ({
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: {
-            loader: 'css-loader', options: { minimize: options.mode === 'production' }
+            loader: 'css-loader',
+            options: { minimize: options.mode === 'production' }
           }
         })
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}
+          }
+        ]
       }
     ]
   },
