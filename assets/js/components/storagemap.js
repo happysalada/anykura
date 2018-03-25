@@ -85,8 +85,8 @@ class StorageMap extends Component {
       .then(response => response.json())
       .then(results => {
         if (results.status === '1') {
-          this.props.stored();
           this.props.history.goBack();
+          this.props.inTransit();
         }
       })
       .catch(error => {
@@ -217,7 +217,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    stored: () => dispatch({type: 'CLOSE_SNACK'})
+    stored: () => dispatch({type: 'CLOSE_SNACK'}),
+    inTransit: () => dispatch({type: 'REQUEST_ACCEPT'})
   };
 };
 
