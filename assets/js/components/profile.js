@@ -21,7 +21,7 @@ class Profile extends Component {
   state = {
     deleted: true
   }
-  
+
   vertical = 'bottom';
   horizontal = 'right';
 
@@ -205,7 +205,7 @@ class Profile extends Component {
         <div style={{textAlign: 'center'}}>
           <img
             alt="profile-pic"
-            src="https://placehold.it/125x125"
+            src="/images/profile.jpg"
             style={{
               borderRadius: '10px',
               marginTop: '15px',
