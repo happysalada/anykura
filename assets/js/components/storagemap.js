@@ -227,7 +227,7 @@ export default compose(
     googleMapURL:
       'https://maps.googleapis.com/maps/api/js?key=AIzaSyAmsFKK1Kzq6BSkI7ailUa23HCidqESrl0&v=3.exp&libraries=geometry,drawing,places',
     loadingElement: <div style={{height: `100%`}} />,
-    containerElement: <div style={{height: `450px`, marginTop: '58px'}} />,
+    containerElement: <div style={{height: `430px`, marginTop: '58px'}} />,
     mapElement: <div style={{height: `100%`}} />
   }),
   withRouter,
