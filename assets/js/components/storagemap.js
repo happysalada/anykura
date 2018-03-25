@@ -29,7 +29,7 @@ class StorageMap extends Component {
         this.setState({
           ownerSelected: true,
           currentOwner: {
-            pic: 'http://placehold.it/500x613',
+            pic: 'http://placehold.it/125x125',
             price: '300',
             name: 'placeholdname1',
             perfectFor: 'Perfect for Wine'
@@ -45,7 +45,7 @@ class StorageMap extends Component {
         this.setState({
           ownerSelected: true,
           currentOwner: {
-            pic: 'http://placehold.it/500x613',
+            pic: 'http://placehold.it/125x125',
             price: '200',
             name: 'placeholdname2',
             perfectFor: 'place hold perfect fro'
