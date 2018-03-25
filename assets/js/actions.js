@@ -20,7 +20,7 @@ export function connectToChannel() {
     });
 
     channel.join().receive('ok', () => {
-      dispatch({type: 'LIVE_UPDATE_ON', channel});
+      console.log('live updates on');
     });
 
     return false;
