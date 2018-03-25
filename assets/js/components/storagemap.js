@@ -151,7 +151,7 @@ class StorageMap extends Component {
               style={{
                 display: 'inline-block',
                 position: 'absolute',
-                bottom: '22%',
+                bottom: '20%',
                 left: '38%'
               }}
             >
@@ -162,7 +162,7 @@ class StorageMap extends Component {
               style={{
                 display: 'inline-block',
                 position: 'absolute',
-                bottom: '13%',
+                bottom: '11%',
                 left: '38%'
               }}
             >
@@ -173,7 +173,7 @@ class StorageMap extends Component {
               style={{
                 display: 'inline-block',
                 position: 'absolute',
-                bottom: '17%',
+                bottom: '15%',
                 left: '38%'
               }}
             >
