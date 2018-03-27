@@ -19,7 +19,7 @@ export default function(state = initialState, action) {
             title: 'You are connecte to live updates',
             message: 'Thank you for your business'
           }
-        ],
+        ]
       };
     case 'PICK_UP':
       return {
@@ -31,7 +31,7 @@ export default function(state = initialState, action) {
             title: 'Your item has been picked up by our delivery person',
             message: 'We are moving at the speed of light'
           }
-        ],
+        ]
       };
     case 'REQUEST_ACCEPT':
       return {
@@ -43,7 +43,7 @@ export default function(state = initialState, action) {
             title: 'Your request is accepted',
             message: 'Our delivery person will be there in 1 second!'
           }
-        ],
+        ]
       };
     case 'DELIVERED':
       return {
@@ -55,7 +55,7 @@ export default function(state = initialState, action) {
             title: 'Your item has arrived',
             message: 'We will update you on the conditions of storage'
           }
-        ],
+        ]
       };
     case 'SHOCK':
       return {
@@ -67,13 +67,13 @@ export default function(state = initialState, action) {
             title: 'Your item has been moved!!',
             message: 'We have contacted the storer to ask for an explanation'
           }
-        ],
+        ]
       };
     case 'REMOVE':
       return {
         ...state,
         notificationOpen: !state.notificationOpen,
-        notifications: [],
+        notifications: []
       };
     case 'LIVE_UPDATE_OFF':
       return initialState;
@@ -81,7 +81,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         currentItems: action.items,
-        username: action.items[0] && action.items[0].oem_name || 'SakuraLove'
+        username: (action.items[0] && action.items[0].oem_name) || 'SakuraLove'
       };
     case 'UPDATE_VIEWING':
       return {

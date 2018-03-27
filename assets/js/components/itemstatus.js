@@ -37,7 +37,7 @@ class ItemStatus extends Component {
           <img
             alt="placeholder"
             style={{height: '50%', width: '100%'}}
-            src="/images/wine!.png"
+            src="/images/kimono.png"
           />
         </div>
         <div>
